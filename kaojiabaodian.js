@@ -15,39 +15,5 @@ hostname = *.kakamobi.cn
 
 
 var body = $response.body;
-var resp = {
-  "success": true,
-  "data": {
-    "itemList": [
-      {
-        "status": 1,
-        "title": "高效过科一",
-        "uiList": [
-          {
-            "url": "http:\/\/jiakao.nav.mucang.cn\/difficultQuickPractice?from=45",
-            "conditions": null,
-            "desc": "精简500题",
-            "filterConditions": null
-          },
-          {
-            "url": "http:\/\/jiakao.nav.mucang.cn\/doExam?type=kaochangkaoshi&from=45",
-            "conditions": null,
-            "desc": "真实考场模拟",
-            "filterConditions": null
-          },
-          {
-            "url": "http:\/\/jiakao.nav.mucang.cn\/vip\/difficultPractice?from=45",
-            "conditions": null,
-            "desc": "考前秘卷",
-            "filterConditions": null
-          }
-        ],
-        "identityCode": "vip-ke1",
-        "dispatchUrl": "http:\/\/jiakao.nav.mucang.cn\/vip\/new-vip?from=45&page=%2Fjkbd-vip%2Fbuy%2Fvip.html"
-      }
-    ]
-  },
-  "errorCode": 0,
-  "message": null
-}
-$done({ body: JSON.stringify(resp) });
+body = body.replace(/"effected" : false/g, '"effected" : true');
+$done({ body });
