@@ -8,9 +8,9 @@
 *******************************
 [rewrite_local]
 # > 考驾宝典解锁会员
-^https?:\/\/*\.kakamobi\.cn\/api\/open\/* url script-request-header https://raw.githubusercontent.com/123seven/rewrite_script/main/kaojiabaodian.js
+^https:\/\/squirrel\.kakamobi\.cn\/api\/open\/(.*?)$ url script-request-header https://raw.githubusercontent.com/123seven/rewrite_script/main/kaojiabaodian.js
 [mitm] 
-hostname = *.kakamobi.cn
+hostname = squirrel.kakamobi.cn
 *******************************/
 
 
