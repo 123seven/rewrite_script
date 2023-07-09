@@ -8,12 +8,12 @@
 *******************************
 [rewrite_local]
 # > 考驾宝典解锁会员
-^https:\/\/squirrel\.kakamobi\.cn\/api\/open\/(.*?)$ url script-request-header https://raw.githubusercontent.com/123seven/rewrite_script/main/kaojiabaodian.js
+^https:\/\/sirius\.kakamobi\.cn\/api\/open\/(.*?)$ url script-request-header https://raw.githubusercontent.com/123seven/rewrite_script/main/kaojiabaodian.js
 [mitm] 
-hostname = squirrel.kakamobi.cn
+hostname = sirius.kakamobi.cn
 *******************************/
 
 
 var body = $response.body;
-body = body.replace(/"effected" : false/g, '"effected" : true');
+body = body.replace(/"status" : 0/g, '"status" : 1');
 $done({ body });
